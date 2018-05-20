@@ -11,7 +11,7 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
        (function(){
-          emailjs.init("user_JYU4jmVpfmsayHCPdA7Hz");
+          emailjs.init("user_T07v3DruvYc99D66G7OpZ");
        })();
     </script>
 
@@ -623,7 +623,7 @@
      .on("data", function(event) {
        let mintflint = event.returnValues;
        console.log("Token purchase sucessfull", mintflint.beneficiary, mintflint.value, mintflint.amount);
-       emailjs.send("gmail","test_email",{name: "test", notes: "Check this out!"})
+       emailjs.send("gmail","mft_token_purchase",{name: "test", notes: "Check this out!"})
       .then(function(response) {
          console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
       }, function(err) {
