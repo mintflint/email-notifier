@@ -612,6 +612,7 @@
        MintFlint = new web3.eth.Contract(MintFlintABI, MintFlintContractAddress);
        console.log(MintFlint);
 
+       // TODO : change emailjs credenatils
        MintFlint.events.StateChanged()
       .on("data", function(event) {
         let mintflint = event.returnValues;
@@ -628,7 +629,6 @@
       }, function(err) {
          console.log("FAILED. error=", err);
       });
-       // TODO : Code for email trigger
      }).on("error", console.error);
 
     // Get the public state varibale
