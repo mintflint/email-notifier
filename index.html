@@ -22,6 +22,12 @@
 
         <h1>MTF Token Ico</h1>
 
+        <p>
+      		New Invester address: <span id="Invester"></span><br>
+      		Amount : <span id="Amount"></span><br>
+          Token : <span id="Token"></span>
+      	</p>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -623,6 +629,9 @@
      .on("data", function(event) {
        let mintflint = event.returnValues;
        console.log("Token purchase sucessfull", mintflint.beneficiary, mintflint.value, mintflint.amount);
+       document.getElementById("Invester").innerHTML = mintflint.beneficiary;
+       document.getElementById("Amount").innerHTML = mintflint.value;
+       document.getElementById("Token").innerHTML = mintflint.amount;
        emailjs.send("gmail","mft_token_purchase",{name: "test", notes: "Check this out!"})
       .then(function(response) {
          console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
